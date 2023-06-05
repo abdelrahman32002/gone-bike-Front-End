@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Form from '../components/info.astro';
+import Search from '../components/Search.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Card from '../components/keyValue.astro';
+import Bike from '../components/Card.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Navbar/>
+		<br>
+		<div class="font-bold text-2xl text-center">
+
+			 <span>Unleash the Power of Image Search: Track, Recover, Ride again </span>
+
+		</div>
+		<br>
+		<div class="flex justify-center">
+			<a href=""><button class="bg-gray-500 rounded py-2 px-4 text-white mr-2">Create Report</button></a>
+			<a href=""><button class="bg-blue-700 rounded py-2 px-4 text-white">Upload your bike image</button></a>
+		</div>
+		
+
+		<br>
+        <!-- Statistics -->
+        <div class="flex justify-center gap-4 ">
+			<Card  key="320,000" value="Bikes stolen in Italy per year" backColor="#E5EDFF"/>
+			<Card key="1,420,000" value="Total Bikes stolen" backColor="#aec8ff"/>
+			<Card key="&euro;5,6M" value="Total Worth" backColor="#D5F5F6"/>
+		</div>
+
+
+		<br>
+		<div class="font-bold text-2xl text-center">
+
+			<span>Search your bike by filter </span>
+
+	   </div>
+	   <br>
+	   <Search/>
+	   <br>
+
+	   <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-center">
+		<Bike />
+		<Bike />
+		<Bike />
+		<Bike />
+	  </div>
+
+	   <br>
+		<Footer>
+	</main>
+	
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		background-color: ;
+		width: 100%;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
